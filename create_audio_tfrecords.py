@@ -209,19 +209,6 @@ def main():
 
                 audio_content = atr.retrieve_per_user_data(split=split)
 
-                # temp code
-                """
-                # the tfrecords from English is too big for Colab
-                # this is a partial solution
-                print(f'********** {len(audio_content)}')
-                keys = list(audio_content.keys())
-                keys = keys[0:len(keys) // 2]
-                audio_content2 = {}
-                for k in keys:
-                    audio_content2[k] = audio_content[k]
-                audio_content = audio_content2
-                print(f'********** {len(audio_content)}')
-                """
 
                 pia = PersonIdAudio(audio_content, sr, verbose=1)
                 audio_dataset = pia.get_tf_dataset()
@@ -234,5 +221,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
     main()

@@ -6,11 +6,9 @@ import tensorflow_addons as tfa
 from tensorflow.keras import Model
 from tensorflow.keras import layers as L
 
-from create_audio_tfrecords import AudioTarReader, PersonIdAudio
+from create_audio_tfrecords import PersonIdAudio
 
 
-# make compatible with tensorflow 2.4
-# this was supposed to be tfio.audio.spectrogram
 def spectrogram_fn(input, nfft, window, stride, name=None):
     """
     Create spectrogram from audio.
@@ -24,7 +22,6 @@ def spectrogram_fn(input, nfft, window, stride, name=None):
       A tensor of spectrogram.
     """
 
-    # TODO: Support audio with channel > 1.
     return tf.math.abs(
         tf.signal.stft(
             input,
@@ -192,5 +189,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
     main()

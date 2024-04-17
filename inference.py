@@ -1,9 +1,6 @@
-# Compares all the .wav in current Directory
 
 import os
-# suppress tensorflow messages
-# include this if convenient
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # or any {'0', '1', '2'}
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  #To suppress tensorflow warnings
 import numpy as np
 import tensorflow as tf
 import tensorflow_io as tfio
@@ -13,16 +10,14 @@ import train_speech_id_model
 
 def main():
     threshold = 0.83
-    audio_files = [x for x in os.listdir() if x.endswith('wav')]
+    audio_files = [x for x in os.listdir() if x.endswith('mp3')]
     audio_embeddings = []
     print(f'Comparing {audio_files}')
     if os.path.isfile('speech-id-model-110/saved_model.pb'):
-        # git push problem
         model = tf.keras.models.load_model('speech-id-model-110')
     else:
         model = train_speech_id_model.BaseSpeechEmbeddingModel()
         model.load_weights('speech-id-model-110/cp-0110.ckpt')
-        # after "save", you can use load_model without problems
         model.save('speech-id-model-110')
     target_rate = 48000
 
@@ -58,5 +53,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
     main()
