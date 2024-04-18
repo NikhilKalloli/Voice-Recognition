@@ -1,5 +1,5 @@
 # Voice Recognition 
-This project uses a pre trained speech embedding model for speaker recognition using TensorFlow 2.4 and TensorFlow 2.5. The model achieves over 98% accuracy in identifying whether two speech samples belong to the same person.
+This project uses a pre trained speech embedding model for speaker recognition using TensorFlow 2.4 and TensorFlow 2.5. The model achieves over 98% accuracy in identifying whether two speech samples belong to the same person without storing any personal voice samples.
 
 ## Usage
 
@@ -31,18 +31,17 @@ This project uses a pre trained speech embedding model for speaker recognition u
 
 ## Working
 #### **Model Architecture:** 
-This speech embedding model architecture utilizes a stack of two LSTM layers following the computation of the mel-frequency spectrogram from the input audio data in the time domain.
-The model architecture includes a Dense layer that outputs the final audio embeddings.
-The total number of parameters is 641k.
+This speech embedding model architecture utilizes a stack of two LSTM layers following the computation of the mel-frequency spectrogram from the input audio data in the time domain. The model architecture includes a Dense layer that outputs the final audio embeddings.The total number of parameters is 641k.
 
 #### **Dataset:**
-In this work, the Mozilla Common Voice dataset was used. It contains a large amount of voice samples, including client_id, the audio file, the sentence that was spoken and some features about the speaker (age, gender, etc).
+In this work, the [Mozilla Common Voice dataset](https://commonvoice.mozilla.org/en/datasets) was used. It contains a large amount of voice samples, including client_id, the audio file, the sentence that was spoken and some features about the speaker (age, gender, etc).
 
 #### **Training:** 
 Training involves preprocessing audio samples, utilizing triplet loss, and training on a large dataset.
 
 #### **Applications:** 
 This model enables identity verification from speech, offering applications in audio diarization, identity verification, and transfer learning.
+
 
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, please create a pull request.
