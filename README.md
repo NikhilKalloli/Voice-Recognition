@@ -1,7 +1,13 @@
 # Voice Recognition 
 This project uses a pre trained speech embedding model for speaker recognition using TensorFlow 2.4 and TensorFlow 2.5. The model achieves over 98% accuracy in identifying whether two speech samples belong to the same person without storing any personal voice samples.
 
-## Usage
+
+
+https://github.com/NikhilKalloli/Voice-Recognition/assets/123582746/994f5b86-7cde-4c66-86ce-c6c2971d8526
+
+
+
+## Getting Started
 
 1. Clone the repository:
 
