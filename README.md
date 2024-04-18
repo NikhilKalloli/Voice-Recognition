@@ -30,24 +30,22 @@ This project uses a pre trained speech embedding model for speaker recognition u
     ```
 
 ## Working
-### Model Architecture:
+#### **Model Architecture:** 
 This speech embedding model architecture utilizes a stack of two LSTM layers following the computation of the mel-frequency spectrogram from the input audio data in the time domain.
 The model architecture includes a Dense layer that outputs the final audio embeddings.
 The total number of parameters is 641k.
 
-### Dataset
+#### **Dataset:**
 In this work, the Mozilla Common Voice dataset was used. It contains a large amount of voice samples, including client_id, the audio file, the sentence that was spoken and some features about the speaker (age, gender, etc).
 
-### Training
+#### **Training:** 
 Training involves preprocessing audio samples, utilizing triplet loss, and training on a large dataset.
 
-### Applications
+#### **Applications:** 
 This model enables identity verification from speech, offering applications in audio diarization, identity verification, and transfer learning.
 
 ## Contributing
-
 Contributions are welcome! If you have any improvements or new features to suggest, please create a pull request.
-
 If you have any questions or issues, feel free to [open an issue](https://github.com/NikhilKalloli/Voice-Recognition/issues).
 
 
