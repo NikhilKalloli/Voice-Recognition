@@ -1,11 +1,5 @@
 # Voice Recognition 
-
-This project aims to develop a voice recognition system using machine learning techniques. The system is built using TensorFlow and Streamlit for deployment.
-
-## Features
-
-- Upload two MP3 files to compare if they are from the same person.
-- Display the conclusion based on the comparison: "Same person" or "Different people".
+This project uses a pre trained speech embedding model for speaker recognition using TensorFlow 2.4 and TensorFlow 2.5. The model achieves over 98% accuracy in identifying whether two speech samples belong to the same person.
 
 ## Usage
 
@@ -23,7 +17,7 @@ This project aims to develop a voice recognition system using machine learning t
     ```
     py -3.8 -m venv venv
     ```
-#### If you don't have python 3.8 installed, you can download it from [here](https://www.python.org/downloads/release/python-380/)
+   ###### If you don't have python 3.8 installed, you can download it from [here](https://www.python.org/downloads/release/python-380/)
 
 4. Install the required dependencies(in a virtual Environment):
     ```
@@ -34,5 +28,26 @@ This project aims to develop a voice recognition system using machine learning t
     ``` 
     streamlit run streamlit_app.py
     ```
+
+## Working
+### Model Architecture:
+This speech embedding model architecture utilizes a stack of two LSTM layers following the computation of the mel-frequency spectrogram from the input audio data in the time domain.
+The model architecture includes a Dense layer that outputs the final audio embeddings.
+The total number of parameters is 641k.
+
+### Dataset
+In this work, the Mozilla Common Voice dataset was used. It contains a large amount of voice samples, including client_id, the audio file, the sentence that was spoken and some features about the speaker (age, gender, etc).
+
+### Training
+Training involves preprocessing audio samples, utilizing triplet loss, and training on a large dataset.
+
+### Applications
+This model enables identity verification from speech, offering applications in audio diarization, identity verification, and transfer learning.
+
+## Contributing
+
+Contributions are welcome! If you have any improvements or new features to suggest, please create a pull request.
+
+If you have any questions or issues, feel free to [open an issue](https://github.com/NikhilKalloli/Voice-Recognition/issues).
 
 
